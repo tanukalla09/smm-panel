@@ -1,0 +1,24 @@
+# Local configuration (API keys, DB passwords, SMTP credentials)
+includes/config.php
+
+# Composer
+vendor/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (if used for tooling)
+node_modules/
+
+# Database backups
+*backup*.sql
+*.sql.bak
+*.sql.backup
