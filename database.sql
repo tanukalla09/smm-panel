@@ -1,8 +1,8 @@
 -- SMM Panel Database Schema
 -- Import this file into MySQL to set up the database
 
-CREATE DATABASE IF NOT EXISTS smm_panel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE smm_panel;
+
+
 
 -- Providers (external API sources like fastxsmm.com)
 CREATE TABLE IF NOT EXISTS providers (
@@ -174,3 +174,4 @@ INSERT INTO services (provider_id, provider_service_id, name, category, descript
 (1, '4', 'YouTube Subscribers', 'YouTube', 'Gradual YouTube subscriber delivery.', 15.0000, 12.0000, 100, 10000, 'active'),
 (1, '5', 'TikTok Followers', 'TikTok', 'TikTok followers with refill guarantee.', 4.0000, 3.0000, 100, 50000, 'active'),
 (1, '6', 'Twitter/X Followers', 'Twitter', 'Twitter/X profile followers.', 3.5000, 2.5000, 100, 50000, 'active');
+
