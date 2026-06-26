@@ -4,6 +4,9 @@
 
 Built as a full-stack PHP application with no framework, featuring Stripe payments, JustAnotherPanel API integration, real-time in-app notifications, HTML email alerts, and a premium light-theme UI designed for clarity and speed.
 
+**Live demo:** [http://smmpurplemerit.fwh.is](http://smmpurplemerit.fwh.is)  
+**Repository:** [github.com/tanukalla09/smm-panel](https://github.com/tanukalla09/smm-panel)
+
 [![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7+-4479A1?style=flat&logo=mysql&logoColor=white)](https://mysql.com)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
@@ -171,8 +174,9 @@ smm-panel/
 ### Step 1 — Clone or download the project
 
 ```bash
-git clone https://github.com/yourusername/smm-panel.git
+git clone https://github.com/tanukalla09/smm-panel.git
 cd smm-panel
+cp includes/config.example.php includes/config.php
 ```
 
 Or copy the project folder into your web server root:
@@ -203,7 +207,13 @@ This creates the `smm_panel` database with all tables, sample services, and a de
 
 ### Step 4 — Configure the application
 
-Edit `includes/config.php` with your database, Stripe, email, and site URL settings. See the [Configuration](#configuration) section below for full details.
+```bash
+cp includes/config.example.php includes/config.php
+```
+
+Edit `includes/config.php` with your database, Stripe, email, and site URL settings. For **InfinityFree** or similar shared hosting, see `includes/config.production.example.php`. See the [Configuration](#configuration) section below for full details.
+
+> **Important:** `includes/config.php` is gitignored and must be created on each machine. Never commit real API keys or passwords.
 
 ### Step 5 — Run on localhost
 
@@ -236,6 +246,35 @@ The cron script forwards pending orders to the provider and syncs order statuses
 
 ```bash
 php cron/process_orders.php
+```
+
+---
+
+## Live Deployment
+
+| Environment | URL |
+|-------------|-----|
+| **Production (InfinityFree)** | [http://smmpurplemerit.fwh.is](http://smmpurplemerit.fwh.is) |
+| **Local (XAMPP)** | `http://localhost/smm-panel/` |
+
+### Deploy to InfinityFree (free PHP + MySQL)
+
+1. Create account at [InfinityFree](https://infinityfree.com) and add your domain
+2. Upload all project files to `htdocs` via File Manager or FTP (exclude `.git`)
+3. Create a MySQL database in the hosting control panel
+4. Import `database.sql` via phpMyAdmin
+5. Copy `includes/config.production.example.php` → `includes/config.php` and fill in:
+   - MySQL host (e.g. `sql103.infinityfree.com` — use the exact host from your panel)
+   - Database name, username, password
+   - `SITE_URL` = your live domain (e.g. `http://smmpurplemerit.fwh.is`)
+6. Log in as admin and change the default password
+
+### Health check
+
+After deployment, visit `/health.php` to verify PHP, config, and database connectivity:
+
+```
+https://yourdomain.com/health.php
 ```
 
 ---

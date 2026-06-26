@@ -1,6 +1,9 @@
 # Local configuration (API keys, DB passwords, SMTP credentials)
 includes/config.php
 
+# Production config templates with secrets should stay as examples only
+# includes/config.production.example.php is tracked (safe)
+
 # Composer
 vendor/
 
