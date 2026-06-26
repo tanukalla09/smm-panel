@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="<?= SITE_URL ?>/assets/css/style.css" rel="stylesheet">
-    <link href="<?= SITE_URL ?>/assets/css/animations.css" rel="stylesheet">
-    <link href="<?= SITE_URL ?>/assets/css/auth.css" rel="stylesheet">
+    <link href="<?= assetUrl('assets/css/style.css') ?>" rel="stylesheet">
+    <link href="<?= assetUrl('assets/css/animations.css') ?>" rel="stylesheet">
+    <link href="<?= assetUrl('assets/css/auth.css') ?>" rel="stylesheet">
 </head>
 <body class="auth-page-v2 anim-body">
 
@@ -125,6 +125,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<script src="<?= SITE_URL ?>/assets/js/animations.js"></script>
+<script src="<?= assetUrl('assets/js/animations.js') ?>"></script>
 </body>
 </html>

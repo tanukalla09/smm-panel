@@ -13,7 +13,7 @@ define('DB_PASS', 'YOUR_DB_PASSWORD');
 define('DB_CHARSET', 'utf8mb4');
 
 define('SITE_NAME', 'SMM Panel');
-define('SITE_URL', 'https://yourdomain.infinityfreeapp.com');  // Your live site URL (no trailing slash)
+define('SITE_URL', 'https://yourdomain.infinityfreeapp.com');  // Use https:// on live hosting
 
 define('STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY');
 define('STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC_KEY');
